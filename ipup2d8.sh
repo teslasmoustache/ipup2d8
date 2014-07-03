@@ -78,6 +78,8 @@ fi
 
 echo "$IP" > "$IPUP2D8_FILE"
 
+mkdir -p "$TASKS_DIR"
+
 for TASK in `ls "$TASKS_DIR"`; do
     "$TASK" "$IP"
 done
