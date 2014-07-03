@@ -53,7 +53,7 @@ else
 fi
 
 #This line takes the lines containing your IP address from the IP #file that was just created and prints it to another file called #'currentip'.
-grep "inet" ~/ipup2d8/ip > ~/ipup2d8/currentip/currentip
+grep ~/ipup2d8/ip > ~/ipup2d8/currentip/currentip
 
 #The next step is to upload the currentip file to a Git repository. #You need to CREATE a Git repository on some public site. 
 #I'm using Github.
