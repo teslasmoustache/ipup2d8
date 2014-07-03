@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+#####
+# User config
+#####
+
+GIT_PROJECT_CHECKOUT="${HOME}/src/my-wan-ip-address"
+
+#####
+# End user config
+#####
+
+cd "$GIT_PROJECT_CHECKOUT" || exit 1
+
+git reset --hard
+git merge origin
+
+echo "$1" > README.md
+
+git commit --message "My current WAN IP address: $1"
+
+git push
