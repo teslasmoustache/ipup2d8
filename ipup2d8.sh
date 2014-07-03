@@ -5,7 +5,7 @@
 
 #check for existence of IP output file.
 if [ ! -f ~/ipup2d8/ip ]; then
-	echo 0
+	echo
 else
 	touch ~/ipup2d8/ip
 fi
