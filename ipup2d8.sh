@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #This script will periodically check your IP address and publish it to a git page of your choosing.
-#This script will probably only be compatible with GNU-Linux.
+#This script should work on GNU/Linux, BSD, and Mac OS X machines.
 
 ################################
 # User configuration section
