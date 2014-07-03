@@ -39,11 +39,18 @@ WAN_IP_RESOLVER=ifconfig.me
 # End user configuration section
 ################################
 
+die () {
+    echo $@ 1>&2
+    exit 1
+}
+
 IPUP2D8_DIR="${HOME}/.ipup2d8"
 IPUP2D8_FILE="${IPUP2D8_DIR}/ip"
 TASKS_DIR="${IPUP2D8_DIR}/push-ip.d"
 
-mkdir -p "$IPUP2D8_DIR"
+[ -d "$IPUP2D8_DIR" ] || die "No directory named $IPUP2D8_DIR found"
+[ -d "$TASKS_DIR" ] || die "No directory named $TASKS_DIR found"
+
 cd "$IPUP2D8_DIR"
 
 touch "$IPUP2D8_FILE"
@@ -77,8 +84,6 @@ fi
 [ "$IP" = "$OLD_IP" ] && exit 0
 
 echo "$IP" > "$IPUP2D8_FILE"
-
-mkdir -p "$TASKS_DIR"
 
 for TASK in `ls "$TASKS_DIR"`; do
     "$TASK" "$IP"
