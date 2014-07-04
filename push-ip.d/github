@@ -17,6 +17,6 @@ git merge origin
 
 echo "$1" > README.md
 
-git commit --message "My current WAN IP address: $1"
+git commit --message "My current WAN IP address: $1" README.md
 
 git push
